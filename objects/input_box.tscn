@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/input_box.gd" type="Script" id=1]
+
+[node name="input_box" type="LineEdit"]
+margin_right = 116.0
+margin_bottom = 24.0
+text = "lemon"
+align = 2
+context_menu_enabled = false
+shortcut_keys_enabled = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="." to="." method="_on_input_box_text_changed"]

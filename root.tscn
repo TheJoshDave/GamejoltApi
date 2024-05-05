@@ -1,0 +1,1105 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/button_variable_controller.gd" type="Script" id=1]
+[ext_resource path="res://scripts/output.gd" type="Script" id=2]
+[ext_resource path="res://objects/number_box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/copy_button.gd" type="Script" id=5]
+[ext_resource path="res://objects/input_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/drop_box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://theme.tres" type="Theme" id=8]
+[ext_resource path="res://scripts/root.gd" type="Script" id=9]
+
+[node name="root" type="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="all" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 8 )
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="io" type="VBoxContainer" parent="all"]
+margin_right = 512.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="output" type="TextEdit" parent="all/io"]
+margin_right = 512.0
+margin_bottom = 300.0
+hint_tooltip = "text"
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Output:"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+highlight_all_occurrences = true
+override_selected_font_color = true
+wrap_enabled = true
+caret_blink = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="input" type="TextEdit" parent="all/io"]
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 600.0
+hint_tooltip = "text"
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Input:"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+highlight_all_occurrences = true
+override_selected_font_color = true
+wrap_enabled = true
+caret_blink = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="VBoxContainer" parent="all"]
+margin_left = 512.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="grid" type="GridContainer" parent="all/right"]
+margin_right = 512.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="username" type="HBoxContainer" parent="all/right/grid"]
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="username" type="Label" parent="all/right/grid/username"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Username:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="username2" parent="all/right/grid/username" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "Username of user JoshDave aka user 4544048"
+size_flags_horizontal = 3
+text = "JoshDave"
+
+[node name="user_token" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_right = 512.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="user token" type="Label" parent="all/right/grid/user_token"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "User Token:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user_token" parent="all/right/grid/user_token" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "User token of JoshDave"
+size_flags_horizontal = 3
+text = "L6SmZS"
+
+[node name="trophy_id" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 22.0
+margin_right = 256.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="trophy id" type="Label" parent="all/right/grid/trophy_id"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Trophy ID:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="trophy_id" parent="all/right/grid/trophy_id" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "This is the trophy id for the first trophy the game has!!"
+size_flags_horizontal = 3
+value = 122494.0
+
+[node name="trophy_achieved" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 22.0
+margin_right = 512.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="trophy achieved" type="Label" parent="all/right/grid/trophy_achieved"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Trophy Achieved:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="trophy_achieved" parent="all/right/grid/trophy_achieved" instance=ExtResource( 7 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+make_items = [ "true", "false", "" ]
+
+[node name="data_key" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 44.0
+margin_right = 256.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="data key" type="Label" parent="all/right/grid/data_key"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Data Key:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data_key" parent="all/right/grid/data_key" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+
+[node name="data" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 44.0
+margin_right = 512.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="data" type="Label" parent="all/right/grid/data"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Data:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data2" parent="all/right/grid/data" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "55"
+
+[node name="data_operation" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 66.0
+margin_right = 256.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="data operation" type="Label" parent="all/right/grid/data_operation"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Data Operation:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data_operation" parent="all/right/grid/data_operation" instance=ExtResource( 7 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+make_items = [ "add", "subtract", "multiply", "divide", "append", "prepend" ]
+
+[node name="data_operation_value" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 66.0
+margin_right = 512.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="data operation value" type="Label" parent="all/right/grid/data_operation_value"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Operation Value:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data_operation_value" parent="all/right/grid/data_operation_value" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "5"
+
+[node name="score_name" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 88.0
+margin_right = 256.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="score name" type="Label" parent="all/right/grid/score_name"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Score Name:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score_name" parent="all/right/grid/score_name" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "600_tardigrade_points"
+
+[node name="score_sort" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 88.0
+margin_right = 512.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="score int" type="Label" parent="all/right/grid/score_sort"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Score int:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score_int" parent="all/right/grid/score_sort" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+max_value = 999999.0
+value = 600.0
+
+[node name="guest_name" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 110.0
+margin_right = 256.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="guest name" type="Label" parent="all/right/grid/guest_name"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Guest Name:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="guest_name" parent="all/right/grid/guest_name" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "TheGuest"
+
+[node name="extra_data" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 110.0
+margin_right = 512.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="extra data" type="Label" parent="all/right/grid/extra_data"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Extra Data:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="extra_data" parent="all/right/grid/extra_data" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "dave_ball"
+
+[node name="table_id" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 132.0
+margin_right = 256.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="table id" type="Label" parent="all/right/grid/table_id"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Table ID:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="table_id" parent="all/right/grid/table_id" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "This is the main table id for the wrapper on gamejolt, as I don't need this, since it's not a game and it doesn't have anything important,  you guys can experiment with it!!!"
+size_flags_horizontal = 3
+max_value = 1e+12
+value = 510451.0
+
+[node name="ping_status" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 132.0
+margin_right = 512.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="ping status" type="Label" parent="all/right/grid/ping_status"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Ping Status:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ping_status" parent="all/right/grid/ping_status" instance=ExtResource( 7 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+make_items = [ "active", "idle", "" ]
+
+[node name="data_pattern" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 154.0
+margin_right = 256.0
+margin_bottom = 176.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="data pattern" type="Label" parent="all/right/grid/data_pattern"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Data Pattern:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data_pattern" parent="all/right/grid/data_pattern" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+text = "save"
+
+[node name="score_limit" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 154.0
+margin_right = 512.0
+margin_bottom = 176.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="score limit" type="Label" parent="all/right/grid/score_limit"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Score Limit:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score_limit" parent="all/right/grid/score_limit" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 100.0
+value = 100.0
+allow_greater = false
+allow_lesser = false
+
+[node name="better_than" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 176.0
+margin_right = 256.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="better than" type="Label" parent="all/right/grid/better_than"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Better Than:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="better_than" parent="all/right/grid/better_than" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+max_value = 999999.0
+value = 5000.0
+
+[node name="worse_than" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 176.0
+margin_right = 512.0
+margin_bottom = 198.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="worse than" type="Label" parent="all/right/grid/worse_than"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Worse Than:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="worse_than" parent="all/right/grid/worse_than" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+max_value = 999999.0
+
+[node name="user_id" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 198.0
+margin_right = 256.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="user id" type="Label" parent="all/right/grid/user_id"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "User ID:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="user_id" parent="all/right/grid/user_id" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "User id of JoshDave"
+size_flags_horizontal = 3
+value = 4.54405e+06
+
+[node name="game_id" type="HBoxContainer" parent="all/right/grid"]
+margin_left = 256.0
+margin_top = 198.0
+margin_right = 512.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="game id" type="Label" parent="all/right/grid/game_id"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Game ID:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="game_id" parent="all/right/grid/game_id" instance=ExtResource( 3 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "This is the game id for the wrapper on gamejolt, as I don't need this, since it's not a game and it doesn't have anything important,  you guys can experiment with it!!!"
+size_flags_horizontal = 3
+max_value = 1e+12
+value = 503156.0
+
+[node name="private_key" type="HBoxContainer" parent="all/right/grid"]
+margin_top = 220.0
+margin_right = 256.0
+margin_bottom = 242.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="private key" type="Label" parent="all/right/grid/private_key"]
+modulate = Color( 0.980392, 0.980392, 0.980392, 1 )
+margin_right = 128.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Private Key:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="private_key" parent="all/right/grid/private_key" instance=ExtResource( 6 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "This is the private key for the wrapper on gamejolt, as I don't need this, since it's not a game and it doesn't have anything important,  you guys can experiment with it!!!"
+size_flags_horizontal = 3
+text = "6726ddc07f27905b7cc05673e82a09b7"
+
+[node name="info" type="MarginContainer" parent="all/right"]
+margin_top = 242.0
+margin_right = 512.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="all/right/info"]
+margin_right = 512.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text" type="MarginContainer" parent="all/right/info"]
+margin_right = 512.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="all/right/info/text"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 504.0
+margin_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="all/right/info/text/VBoxContainer"]
+margin_right = 496.0
+margin_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "This will allow you to test out different parts of the library, it it helpful to have a manage game open so that you can see things get filled in. Hover over cammnad buttons to see parameters, fill out what it wants and send the command, if the parameters are optional and you don't want them either put 0 or leave it blank, if you do not put 0 or leave blank then the parameters will be added into the command.
+
+Each function needs the Game ID and the Private Key to find the private key and game id go to \"manage game\" > \"Game API\" > \"API Settings\".
+
+If you need more help with function parameters, the first link down below sends you to gamejolt's documentation of each part of the api. (click to copy, then paste in browser)
+
+If you need help on knowing where parameters go in each function you can find that on the second link, in the docs. (click to copy, then paste in browser)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gamejolt_api_docs" type="LinkButton" parent="all/right/info/text/VBoxContainer"]
+margin_top = 152.0
+margin_right = 496.0
+margin_bottom = 166.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "https://gamejolt.com/game-api/doc"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="my_pdf" type="LinkButton" parent="all/right/info/text/VBoxContainer"]
+margin_top = 174.0
+margin_right = 496.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "will add soon"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="VBoxContainer" parent="all/right"]
+margin_top = 446.0
+margin_right = 512.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data" type="HBoxContainer" parent="all/right/buttons"]
+margin_right = 512.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="api_data_fetch" parent="all/right/buttons/data" instance=ExtResource( 4 )]
+margin_right = 102.0
+margin_bottom = 22.0
+hint_tooltip = "Needs: 
+key(data key)
+
+Optional:
+username && user token"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "data fetch"
+
+[node name="api_data_get_keys" parent="all/right/buttons/data" instance=ExtResource( 4 )]
+margin_left = 102.0
+margin_right = 204.0
+margin_bottom = 22.0
+hint_tooltip = "Optional:
+pattern(data pattern)
+username && user token"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "data get keys"
+
+[node name="api_data_remove" parent="all/right/buttons/data" instance=ExtResource( 4 )]
+margin_left = 204.0
+margin_right = 306.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+key(data key)
+
+Optional:
+username && user token"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "data remove"
+
+[node name="api_data_set" parent="all/right/buttons/data" instance=ExtResource( 4 )]
+margin_left = 306.0
+margin_right = 408.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+key(data key)
+data
+
+Optional:
+username && user token"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "data set"
+
+[node name="api_data_update" parent="all/right/buttons/data" instance=ExtResource( 4 )]
+margin_left = 408.0
+margin_right = 512.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+key(data key)
+operation(data operation)
+value(operation value)
+
+Optional:
+username && user token"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "data update"
+
+[node name="time" type="HBoxContainer" parent="all/right/buttons"]
+margin_top = 22.0
+margin_right = 512.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="api_time" parent="all/right/buttons/time" instance=ExtResource( 4 )]
+margin_right = 512.0
+margin_bottom = 22.0
+hint_tooltip = "No Parameters"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "time"
+
+[node name="score" type="HBoxContainer" parent="all/right/buttons"]
+margin_top = 44.0
+margin_right = 512.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="api_score_add" parent="all/right/buttons/score" instance=ExtResource( 4 )]
+margin_right = 128.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+score(score name)
+sort(score int)
+username && user token  || guest(guest name)
+Optional:
+extra data
+table id"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "score add"
+
+[node name="api_score_get_rank" parent="all/right/buttons/score" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+sort(score int)
+table id"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "score get rank"
+
+[node name="api_score_fetch" parent="all/right/buttons/score" instance=ExtResource( 4 )]
+margin_left = 256.0
+margin_right = 384.0
+margin_bottom = 22.0
+hint_tooltip = "Optional:
+limit(score limit)
+username && user token  || guest(guest name)
+table id
+better than
+worse than"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "score fetch"
+
+[node name="api_score_table" parent="all/right/buttons/score" instance=ExtResource( 4 )]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 22.0
+hint_tooltip = "No Parameters"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "score table"
+
+[node name="session" type="HBoxContainer" parent="all/right/buttons"]
+margin_top = 66.0
+margin_right = 512.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="api_session_open" parent="all/right/buttons/session" instance=ExtResource( 4 )]
+margin_right = 128.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token "
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "session open"
+
+[node name="api_session_close" parent="all/right/buttons/session" instance=ExtResource( 4 )]
+margin_left = 128.0
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token "
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "session close"
+
+[node name="api_session_ping" parent="all/right/buttons/session" instance=ExtResource( 4 )]
+margin_left = 256.0
+margin_right = 384.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token 
+Optional:
+status(ping status)"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "session ping"
+
+[node name="api_session_check" parent="all/right/buttons/session" instance=ExtResource( 4 )]
+margin_left = 384.0
+margin_right = 512.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token "
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "session check"
+
+[node name="trophy" type="HBoxContainer" parent="all/right/buttons"]
+margin_top = 88.0
+margin_right = 512.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="api_trophy_fetch" parent="all/right/buttons/trophy" instance=ExtResource( 4 )]
+margin_right = 170.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token 
+Optional:
+achieved(trophy achieved)
+trophy id"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "trophy fetch"
+
+[node name="api_trophy_add_achieved" parent="all/right/buttons/trophy" instance=ExtResource( 4 )]
+margin_left = 170.0
+margin_right = 340.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token 
+trophy id"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "trophy add achieved"
+
+[node name="api_trophy_remove_achieved" parent="all/right/buttons/trophy" instance=ExtResource( 4 )]
+margin_left = 340.0
+margin_right = 512.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token 
+trophy id"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "trophy remove achieved"
+
+[node name="user" type="HBoxContainer" parent="all/right/buttons"]
+margin_top = 110.0
+margin_right = 512.0
+margin_bottom = 132.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="api_user_fetch" parent="all/right/buttons/user" instance=ExtResource( 4 )]
+margin_right = 256.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username || user id"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "user fetch"
+
+[node name="api_user_auth" parent="all/right/buttons/user" instance=ExtResource( 4 )]
+margin_left = 256.0
+margin_right = 512.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token "
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "user auth"
+
+[node name="friends" type="HBoxContainer" parent="all/right/buttons"]
+margin_top = 132.0
+margin_right = 512.0
+margin_bottom = 154.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="api_friends" parent="all/right/buttons/friends" instance=ExtResource( 4 )]
+margin_right = 512.0
+margin_bottom = 22.0
+hint_tooltip = "Needs:
+username && user token "
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "friends"
+[connection signal="pressed" from="all/right/info/text/VBoxContainer/gamejolt_api_docs" to="all/right/info/text/VBoxContainer/gamejolt_api_docs" method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="all/right/info/text/VBoxContainer/my_pdf" to="all/right/info/text/VBoxContainer/my_pdf" method="_on_LinkButton_pressed"]
